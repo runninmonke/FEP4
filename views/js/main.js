@@ -456,7 +456,8 @@ var resizePizzas = function(size) {
 
     // Apply new width to each pizza
     var items = document.querySelectorAll(".randomPizzaContainer");
-    for (var i = 0; i < items.length; i++) {
+    var len = items.length
+    for (var i = 0; i < len; i++) {
       items[i].style.width = newwidth;
     }
   }
@@ -504,11 +505,14 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
+
   window.performance.mark("mark_start_frame");
+
   var scrollPos = document.body.scrollTop / 1250;
   var items = document.querySelectorAll('.mover');
+  var phase;
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(scrollPos + (i % 5));
+    phase = Math.sin(scrollPos + (i % 5));
     items[i].style.transform = 'translateX(' + 100 * phase + 'px)';
   }
 
@@ -529,7 +533,11 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+
+  //Set how many background pizzas will be created based on screen height
+  var backgroundPizzaCount = Math.floor((screen.height + s) / s) * cols;
+
+  for (var i = 0; i <= backgroundPizzaCount; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
