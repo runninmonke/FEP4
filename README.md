@@ -11,7 +11,7 @@ I improved the PageSpeed score of index.html by doing the following:
 
 I improved the rendering of views/pizza.html by removing "jank" in the following ways:
 * Limited the number of background pizzas created to only those that will fit within the screen height
-* Changed CSS effect used to implement pizza animation to 'transform: translateX' to avoid Layout recalculations
+* Changed CSS effect used to implement pizza animation to `transform: translateX` to avoid Layout recalculations
 * Moved computational work that remains unchanged each iteration to the outside of the `for` loops in `changePizzaSizes` and `updatePositions`
 
 #### Getting Started
