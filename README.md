@@ -15,4 +15,4 @@ I improved the rendering of views/pizza.html by removing "jank" in the following
 * Moved computational work that remains unchanged each iteration to the outside of the 'for' loops in 'changePizzaSizes' and 'updatePositions'
 
 #### Getting Started
-Simply navigate to [http://runninmonke.github.io/FEP4/] or launch index.html.
+Simply navigate to http://runninmonke.github.io/FEP4/ or launch index.html.
